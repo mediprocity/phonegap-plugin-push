@@ -186,6 +186,7 @@ public class PushPlugin extends CordovaPlugin implements PushConstants {
             jo = data.getJSONObject(0).getJSONObject(ANDROID);
 
             // If no NotificationChannels exist create the default one
+            jo.putOpt(CHANNEL_IMPORTANCE, NotificationManager.IMPORTANCE_HIGH);
             createDefaultNotificationChannelIfNeeded(jo);
 
             Log.v(LOG_TAG, "execute: jo=" + jo.toString());
